@@ -34,3 +34,11 @@ This project implements **mutation testing** on a Library Management System to e
     ```
 
 ---
+### **Mutation Operators**  
+- **Unit-Level**: Includes `MATH`, `INCREMENTS`, `TRUE_RETURNS`, and `CONDITIONALS_BOUNDARY` to test isolated methods.  
+- **Integration-Level**: Includes `REMOVE_CONDITIONALS`, `NULL_RETURNS`, and `VOID_METHOD_CALLS` to test interactions between components.  
+
+---
+### **Result**
+- Line Coverage - 99%
+- Mutation Coverage - 89%

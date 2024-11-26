@@ -41,9 +41,12 @@ public class LibraryTest {
 
     @Test
     public void testAddBook() {
+
         Book book4 = new Book(4, "Brave New World", "Aldous Huxley");
         Book book5 = new Book(5, "To Kill a Mockingbird", "Harper Lee");
 
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
         library.addBook(book4);
         library.addBook(book5);
 
@@ -51,10 +54,15 @@ public class LibraryTest {
         assertEquals(5, books.size());
         assertTrue(books.contains(book4));
         assertTrue(books.contains(book5));
+        String output = outputStream.toString();
+        assertTrue(output.contains(" has been added to the library."));
+
     }
 
     @Test
     public void testAddUser() {
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
         library.addUser(user1);
         library.addUser(user2);
 
@@ -62,6 +70,8 @@ public class LibraryTest {
         assertEquals(4, users.size());
         assertTrue(users.contains(user1));
         assertTrue(users.contains(user2));
+        String output = outputStream.toString();
+        assertTrue(output.contains("has been added as a user."));
     }
 
     @Test

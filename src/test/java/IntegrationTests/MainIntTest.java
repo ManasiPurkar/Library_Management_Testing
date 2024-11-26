@@ -33,37 +33,7 @@ public class MainIntTest {
         System.setIn(originalInput); // Restore System.in
         System.setOut(originalOutput); // Restore System.out
     }
-    /*
-    @Test
-    void testMainIntegration() {
 
-        // Simulate user input to cover the flow
-        String simulatedUserInput = "1\n101\nBook Title\nAuthor Name\n6\n"; // Add book and exit
-        ByteArrayInputStream inputStream = new ByteArrayInputStream(simulatedUserInput.getBytes());
-        System.setIn(inputStream);
-
-        // Capture system output
-        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outputStream));
-
-        // Call the main method
-        Main.main(new String[]{});
-
-        // Reset System.in and System.out
-        System.setIn(System.in);
-        System.setOut(System.out);
-
-        // Validate the output contains expected strings
-        String output = outputStream.toString();
-        assertTrue(output.contains("Library Management System"));
-        assertTrue(output.contains("1. Add a new book"));
-        assertTrue(output.contains("Enter Book ID:"));
-        assertTrue(output.contains("Enter Book Title:"));
-        assertTrue(output.contains("Enter Book Author:"));
-        assertTrue(output.contains("Exiting the system..."));
-    }
-
-     */
     @Test
     void testMain_AddNewBookOption() {
         String simulatedInput = "1\n101\nBook Title\nAuthor Name\n8\n"; // Add book and exit

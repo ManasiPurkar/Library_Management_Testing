@@ -22,13 +22,13 @@ public class Library {
     // Add book to the library
     public void addBook(Book book) {
         books.add(book);
-//        System.out.println("\"" + book.getTitle() + "\" has been added to the library.");
+        System.out.println("\"" + book.getTitle() + "\" has been added to the library.");
     }
 
     // Add user to the library
     public void addUser(User user) {
         users.add(user);
-//        System.out.println(user.getName() + " has been added as a user.");
+        System.out.println(user.getName() + " has been added as a user.");
     }
 
     // Display all books

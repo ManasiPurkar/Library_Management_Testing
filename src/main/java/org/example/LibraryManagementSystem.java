@@ -58,6 +58,9 @@ public class LibraryManagementSystem {
             if (book != null) {
                 user.borrowBook(book);
             }
+            else {
+                System.out.println("Book not found.");
+            }
         } else {
             System.out.println("User not found.");
         }

@@ -133,17 +133,38 @@ class UserTest {
         assertTrue(output.contains("You haven't borrowed"));
     }
 
+
+
     @Test
     void testDisplayBorrowedBooks() {
-        // Borrow a couple of books
-        user.borrowBook(availableBook);
-        user.borrowBook(unavailableBook);
+        // Arrange: Prepare a user and some books
+        User user = new User(1, "Test User");
+        Book availableBook = new Book(101, "Available Book", "Author A");
+        Book unavailableBook = new Book(102, "Unavailable Book", "Author B");
+        unavailableBook.setAvailable(false); // Mark the book as unavailable
 
-        // Capture the output (for testing display functionality)
-        // In a real test, we could use a framework like System Rules or redirect System.out
-        // For simplicity, let's verify borrowed books count for now
-        assertEquals(1, user.getBorrowedBooks().size());
+        // Borrow only the available book
+        user.borrowBook(availableBook);
+        user.borrowBook(unavailableBook); // This should not be added as it's unavailable
+
+        // Redirect the system output to capture display output
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+
+        // Act: Call the method to display borrowed books
+        user.displayBorrowedBooks();
+
+        // Reset the system output to its original state
+        System.setOut(System.out);
+
+        // Assert: Verify the borrowed books and captured output
+        assertEquals(1, user.getBorrowedBooks().size(), "Only one book should be borrowed");
+        String output = outputStream.toString();
+        assertTrue(output.contains("Book ID: 101"), "Output should contain the available book's details");
+        assertTrue(output.contains("Title: Available Book"), "Output should contain the title of the borrowed book");
+        assertFalse(output.contains("Book ID: 102"), "Output should not contain the unavailable book's details");
     }
+
 
     @Test
     void testDisplayBorrowedBooks_Empty() {

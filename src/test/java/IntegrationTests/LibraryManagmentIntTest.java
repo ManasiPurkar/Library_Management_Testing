@@ -117,23 +117,7 @@ public class LibraryManagmentIntTest {
         assertEquals(2, library.getBooks().size(), "Library should display all books.");
         assertEquals(2, library.getUsers().size(), "Library should display all users.");
     }
-/*
-    @Test
-    void testAddNewUserTriggeredThroughRun() {
-        // Arrange: Mock inputs for the 'Add New User' option
-        when(mockScanner.nextInt()).thenReturn(2);  // User chooses option 2 for adding a new user
-        when(mockScanner.nextLine()).thenReturn(""); // Consume newline
-        when(mockScanner.nextLine()).thenReturn("Alice"); // User name
 
-        // Act: Run the library management system
-        librarySystem.run();
-
-        // Assert: Verify that addNewUser() was called
-        verify(libraryMock).addUser(argThat(user ->
-                user.getName().equals("Alice")
-        ));
-    }
-*/
     @Test
     void testRun_ExitOption() {
         // Mock inputs for exiting the system

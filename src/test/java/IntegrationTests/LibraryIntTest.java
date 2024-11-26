@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.*;
 public class LibraryIntTest {
 
     private Library library;
-    private Book book1, book2, book3;
+    private Book book1, book2,book3;
     private User user1, user2;
 
     @BeforeEach

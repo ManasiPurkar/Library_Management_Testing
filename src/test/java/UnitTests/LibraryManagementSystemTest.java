@@ -292,9 +292,8 @@ class LibraryManagementSystemTest {
 
         // Verify output
         String output = outputStream.toString();
-        assertFalse(output.contains("User not found."), "User should be found, so this message should not appear.");
-        // Since book is null, no specific message is printed in the implementation.
-        // Verify indirectly via interactions.
+        assertTrue(output.contains("Book not found."), "Expected 'Book not found.' message.");
+
     }
 
     @Test
@@ -358,30 +357,7 @@ class LibraryManagementSystemTest {
         verify(libraryMock, never()).searchBookByTitle(anyString());
     }
 
-    /*
-    @Test
-    void testReturnBook_NullBook() {
-        // Mock input for User ID and Book Title
-        when(scannerMock.nextInt()).thenReturn(1); // User ID
-        when(scannerMock.nextLine()).thenReturn("Null Book"); // Book title
 
-        // Mock a valid user
-        User mockUser = mock(User.class);
-        when(mockUser.getUserId()).thenReturn(1);
-        when(libraryMock.getUsers()).thenReturn(Collections.singletonList(mockUser));
-
-        // Mock null book returned from searchBookByTitle
-        when(libraryMock.searchBookByTitle("Null Book")).thenReturn(null);
-
-        // Call the method
-        libraryManagementSystem.returnBook();
-
-        // Verify the interactions
-        verify(libraryMock, times(1)).searchBookByTitle("Null Book");
-        verify(mockUser, never()).returnBook(any(Book.class));
-    }
-
-     */
 
     @Test
     void testReturnBook_NullBook() {

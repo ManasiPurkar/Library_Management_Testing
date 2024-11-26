@@ -46,11 +46,9 @@ public class BookIntTest {
 
     @Test
     void testDisplayBookDetailsIntegration() {
-        // Capture the output (assuming System.out.print is used)
+     
         book.displayBook();
-
-        // In real integration tests, you might capture the output stream and validate its contents
-        // Example: Verify the console output contains the expected details
+   
         assertEquals(1, book.getBookId());
         assertEquals("Effective Java", book.getTitle());
         assertEquals("Joshua Bloch", book.getAuthor());

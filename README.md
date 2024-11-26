@@ -42,3 +42,14 @@ This project implements **mutation testing** on a Library Management System to e
 ### **Result**
 - Line Coverage - 99%
 - Mutation Coverage - 89%
+  
+---
+### **Contributions**
+1. Manasi Purkar (MT2023158) - Installation of pit, creating codebase of library
+management system, written unit level test cases for library and library
+management classes, written integration test cases for main class, library
+management class and book class
+
+3. Pracheti Bhale (MT2023155) - Installation of pit, creating codebase of library
+management system, written unit test cases for classes Book and User, written
+integration test cases for user class and library class

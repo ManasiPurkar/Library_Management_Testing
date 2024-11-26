@@ -1,0 +1,9 @@
+IntegrationTests/LibraryIntTest.class
+IntegrationTests/BookIntTest.class
+UnitTests/BookTest.class
+UnitTests/LibraryManagementSystemTest.class
+IntegrationTests/LibraryManagmentIntTest.class
+UnitTests/LibraryTest.class
+IntegrationTests/UserIntTest.class
+IntegrationTests/MainIntTest.class
+UnitTests/UserTest.class
